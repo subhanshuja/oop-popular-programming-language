@@ -89,5 +89,28 @@ public class BasicTwo {
         }
         System.out.print("--------------------------------------------- \n");
 
+        System.out.print("---Show Matrix 2D Combine String and Char----- \n");
+        for (int i = 0; i < valueCharArray.length; i++) {
+            System.out.printf("Char:  %s \n",valueCharArray[i]);
+            
+            for (int j = 0; j < valueStringArray.length; j++) {
+              System.out.printf("String:  %s \n",valueStringArray[j]);
+            } 
+        }
+        System.out.print("---------------------------------------------- \n");
+        
+        System.out.print("--Show Value Float-- \n");
+        for(float value: valueFloatArray) {
+            System.out.println(value);
+        }
+        System.out.print("-------------------- \n");
+
+        int i = 0
+        while(i < sizeArray){
+            System.out.print("--Show Value Integer by While Loop-- \n");
+            System.out.println(valueIntegerArray[i]);
+            System.out.print("------------------------------------ \n");
+            i++;
+        }
     }
 }
