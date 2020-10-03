@@ -54,7 +54,7 @@ public class BasicTwo {
 
         System.out.print("---Variable Data Type: Inside Array of Char---- \n");        
         for (int index = 0; index < sizeArray; index++) {
-           System.out.printf("Input Integer inside Array [%d]: ",index);
+           System.out.printf("Input Char inside Array [%d]: ",index);
            valueCharArray[index] = scanner.next().charAt(0);
         }
         System.out.print("------------------------------------------------- \n");
@@ -106,11 +106,19 @@ public class BasicTwo {
         System.out.print("-------------------- \n");
 
         System.out.print("--Show Value Integer by While Loop-- \n");
-        int index = 0;
-        while(index < sizeArray){
-            System.out.println(valueIntegerArray[index]);
-            index++;
+        int i = 0;
+        while(i < sizeArray){
+            System.out.println(valueIntegerArray[i]);
+            i++;
         }
         System.out.print("------------------------------------ \n");
+
+        System.out.print("--Show Value Integer by Do While Loop-- \n");
+        do {
+            System.out.println(valueIntegerArray[i]);
+            i++;
+        } while(i < sizeArray);
+        System.out.print("------------------------------------ \n");
+
     }
 }
