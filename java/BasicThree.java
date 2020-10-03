@@ -1,93 +1,72 @@
 import java.util.Scanner;
+import java.util.Random;
 
-public class BasicTwo {
+public class BasicThree {
 
     public static void main(String []args) {
 
-        int valueInteger;
-        float valueFloat;
-        double valueDouble;
-        char valueChar;
-        String valueString="";
+      Random random = new Random();
 
-        Scanner scanner = new Scanner(System.in);
+      System.out.printf("Please choose random distribution \n");
+      
+      Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Input Array base on Data Type \n");
-        System.out.print("Input size of array \n");
-        int sizeArray = scanner.nextInt();
+      System.out.print("Choose Random Distribution \n");
+      System.out.print("1. Random Integer \n");
+      System.out.print("2. Random Double \n");
+      System.out.print("3. Random Gaussian \n");
+      System.out.print("4. Generate Value Automatically \n");
+      
+      int choose = scanner.nextInt();
 
-        int[] valueIntegerArray = new int[sizeArray];
-        float[] valueFloatArray = new float[sizeArray];
-        double[] valueDoubleArray = new double[sizeArray];
-        char[] valueCharArray = new char[sizeArray];
-        String[] valueStringArray = new String[sizeArray];
-        
-        System.out.printf("Size Array:  %d \n", sizeArray);
+      switch(choose) {
+         case 1:
+            int randInteger = random.nextInt(100);
+            
+            if (randInteger < 50) {
+               System.out.printf("High Random Integer:  %d \n", randInteger);
+            } else if (randInteger > 70) {
+               System.out.printf("Standard Random Integer:  %d \n", randInteger);
+            } else {
+               System.out.printf("Low Integer:  %d \n", randInteger);
+            }
 
-        System.out.print("---Variable Data Type: Inside Array of Integer---- \n");        
-        for (int index = 0; index < sizeArray; index++) {
-           System.out.printf("Input Integer inside Array [%d]: ",index);
-           valueIntegerArray[index] = scanner.nextInt();
-        }
-        System.out.print("------------------------------------------------- \n");
+            break;
+         case 2:
+            double randDouble = random.nextDouble();
 
-        System.out.print("---Variable Data Type: Inside Array of Float---- \n");        
-        for (int index = 0; index < sizeArray; index++) {
-           System.out.printf("Input Float inside Array [%d]: ",index);
-           valueFloatArray[index] = scanner.nextFloat();
-        }
-        System.out.print("------------------------------------------------- \n");
+            if (randDouble < 0.9) {
+               System.out.printf("High Random Double:  %f \n", randDouble);
+            } else if (randDouble > 0.5) {
+               System.out.printf("Standard Random Double:  %f \n", randDouble);
+            } else {
+               System.out.printf("Low Double:  %f \n", randDouble);
+            }
+   
+            break;
+         case 3:
+            double randGaussian = random.nextGaussian();
 
-        System.out.print("---Variable Data Type: Inside Array of Double---- \n");        
-        for (int index = 0; index < sizeArray; index++) {
-           System.out.printf("Input Double inside Array [%d]: ",index);
-           valueDoubleArray[index] = scanner.nextDouble();
-        }
-        System.out.print("------------------------------------------------- \n");
+            if (randGaussian < 9.1) {
+               System.out.printf("High Random Gaussian:  %s \n", randGaussian);
+            } else if (randGaussian > 5) {
+               System.out.printf("Standard Random Gaussian:  %s \n", randGaussian);
+            } else {
+               System.out.printf("Low Gaussian:  %s \n", randGaussian);
+            }
 
-        System.out.print("---Variable Data Type: Inside Array of String---- \n");        
-        for (int index = 0; index < sizeArray; index++) {
-           System.out.printf("Input String inside Array [%d]: ",index);
-           valueStringArray[index] = scanner.next();
-        }
-        System.out.print("------------------------------------------------- \n");
+            break;
+         default:
+            double autoRandom = (1 - random.nextDouble())/2;
 
-        System.out.print("---Variable Data Type: Inside Array of Char---- \n");        
-        for (int index = 0; index < sizeArray; index++) {
-           System.out.printf("Input Integer inside Array [%d]: ",index);
-           valueCharArray[index] = scanner.next().charAt(0);
-        }
-        System.out.print("------------------------------------------------- \n");
-
-        System.out.print("-------Show Data Type: Array of Integer------- \n");
-        for (int index = 0; index < valueStringArray.length; index++) {
-           System.out.printf("Integer:  %s \n",valueIntegerArray[index]);
-        }
-        System.out.print("--------------------------------------------- \n");
-
-        System.out.print("-------Show Data Type: Array of String------- \n");
-        for (int index = 0; index < valueStringArray.length; index++) {
-           System.out.printf("String:  %s \n",valueStringArray[index]);
-        }
-        System.out.print("--------------------------------------------- \n");
-
-        System.out.print("-------Show Data Type: Array of Char------- \n");
-        for (int index = 0; index < valueCharArray.length; index++) {
-           System.out.printf("Char:  %s \n",valueCharArray[index]);
-        }
-        System.out.print("--------------------------------------------- \n");
-
-        System.out.print("-------Show Data Type: Array of Float------- \n");
-        for (int index = 0; index < valueFloatArray.length; index++) {
-           System.out.printf("Float:  %s \n",valueFloatArray[index]);
-        }
-        System.out.print("--------------------------------------------- \n");
-
-        System.out.print("-------Show Data Type: Array of Double------- \n");
-        for (int index = 0; index < valueDoubleArray.length; index++) {
-           System.out.printf("Double:  %s \n",valueDoubleArray[index]);
-        }
-        System.out.print("--------------------------------------------- \n");
+            if (autoRandom < 0.98) {
+               System.out.printf("High Random :  %f \n", autoRandom);
+            } else if (autoRandom > 0.6) {
+               System.out.printf("Standard Random :  %f \n", autoRandom);
+            } else {
+               System.out.printf("Low Random:  %f \n", autoRandom);
+            }
+      }
 
     }
 }
