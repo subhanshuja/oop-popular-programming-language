@@ -105,12 +105,12 @@ public class BasicTwo {
         }
         System.out.print("-------------------- \n");
 
-        int i = 0
-        while(i < sizeArray){
-            System.out.print("--Show Value Integer by While Loop-- \n");
-            System.out.println(valueIntegerArray[i]);
-            System.out.print("------------------------------------ \n");
-            i++;
+        System.out.print("--Show Value Integer by While Loop-- \n");
+        int index = 0;
+        while(index < sizeArray){
+            System.out.println(valueIntegerArray[index]);
+            index++;
         }
+        System.out.print("------------------------------------ \n");
     }
 }
