@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class BasicTwo {
 
@@ -89,36 +90,46 @@ public class BasicTwo {
         }
         System.out.print("--------------------------------------------- \n");
 
-        System.out.print("---Show Matrix 2D Combine String and Char----- \n");
-        for (int i = 0; i < valueCharArray.length; i++) {
-            System.out.printf("Char:  %s \n",valueCharArray[i]);
-            
-            for (int j = 0; j < valueStringArray.length; j++) {
-              System.out.printf("String:  %s \n",valueStringArray[j]);
-            } 
-        }
-        System.out.print("---------------------------------------------- \n");
+        int totalSizeArray = valueCharArray.length + valueCharArray.length;
+        String[] listString = new String[totalSizeArray];
         
-        System.out.print("--Show Value Float-- \n");
+        int position = 0;
+        // Combine Combine String and Char into array
+        for (char vChar: valueCharArray) {
+            listString[position] = Character.toString(vChar);
+            position ++;
+        }
+
+        for (String vString: valueStringArray) {
+            listString[position] = vString;
+            position ++;
+        }
+        
+        System.out.println("---Show Combine String and Char-----");
+        System.out.printf("String & Char: %s",Arrays.toString(listString),"\n");
+        System.out.println("------------------------------------");
+        
+        System.out.println("--Show Value Float--");
         for(float value: valueFloatArray) {
             System.out.println(value);
         }
-        System.out.print("-------------------- \n");
+        System.out.println("--------------------");
 
-        System.out.print("--Show Value Integer by While Loop-- \n");
+        System.out.println("--Show Value Integer by While Loop--");
         int i = 0;
         while(i < sizeArray){
             System.out.println(valueIntegerArray[i]);
             i++;
         }
-        System.out.print("------------------------------------ \n");
+        System.out.println("------------------------------------");
 
-        System.out.print("--Show Value Integer by Do While Loop-- \n");
+        int j = 0;
+        System.out.println("--Show Value Integer by Do While Loop--");
         do {
-            System.out.println(valueIntegerArray[i]);
-            i++;
-        } while(i < sizeArray);
-        System.out.print("------------------------------------ \n");
+            System.out.println(valueIntegerArray[j]);
+            j++;
+        } while(j < sizeArray);
+        System.out.println("------------------------------------");
 
     }
 }
