@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 class IntermediateTwo {
 
+    private static int checkLengthTitle(String title) {
+      return title.length();
+    }
+
     public static void main(String []args) {
 
       Scanner scanner = new Scanner(System.in);
@@ -10,6 +14,7 @@ class IntermediateTwo {
       String title;
       String status;
       TodoList todolist = null;
+      boolean condition = false;
 
       System.out.print("Create todolist \n");
       
@@ -22,8 +27,16 @@ class IntermediateTwo {
       String[] itemArray = new String[sizeItem];
       String[] tagArray = new String[sizeTag]; 
 
-      System.out.print("insert title:");
-      title = scanner.next();
+      do { 
+        System.out.print("insert title:");
+        title = scanner.next();
+
+        if (checkLengthTitle(title) > 7) {
+          condition = true;
+        } else {
+          System.out.println("title should be more than 7 character");
+        }
+      }while(!condition);
 
       System.out.println("insert item:");
       for (int index = 0; index < sizeItem; index++) {
