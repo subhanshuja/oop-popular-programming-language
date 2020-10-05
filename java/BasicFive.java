@@ -34,8 +34,6 @@ public class BasicFive {
     }
     
     public static void main(String []args) {
-
-      System.out.printf("Please choose random distribution \n");
       
       Scanner scanner = new Scanner(System.in);
       int sizeItem;
